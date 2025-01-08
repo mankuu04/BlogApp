@@ -59,7 +59,7 @@
 import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { Controller } from 'react-hook-form';
-
+import conf from '../conf/conf';
 export default function RTE({ name, control, label, defaultValue = "" }) {
     return (
         <div className='w-full'>
@@ -71,7 +71,8 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
                 defaultValue={defaultValue}
                 render={({ field: { onChange, value } }) => (
                     <Editor
-                        apiKey="qug8dzc47aamzmel6jaden3les6wh0cayncnm2t5iqtdqm2p"
+                        apiKey={conf.tinyMce}
+                        // apiKey="qug8dzc47aamzmel6jaden3les6wh0cayncnm2t5iqtdqm2p"
                         initialValue={defaultValue}
                         init={{
                             height: 500,
